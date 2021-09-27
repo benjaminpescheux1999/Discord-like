@@ -1,5 +1,7 @@
 package discord.dao;
 
-public interface IMsgDao {
+import discord.model.MsgModel;
 
+public interface IMsgDao {
+	public MsgModel findById(int id);
 }
