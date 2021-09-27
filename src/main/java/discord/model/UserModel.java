@@ -4,7 +4,7 @@ public class UserModel {
 
 	private static int Id = 0;
 	private String Nom;
-	private String Prenom;
+	private String prenom;
 	
 // Constructeur
 	public UserModel() {
@@ -14,7 +14,7 @@ public class UserModel {
     public UserModel(String Nom, String Prenom) {
         Id++;
         this.Nom = Nom;
-        this.Prenom = Prenom;
+        this.prenom = Prenom;
     }
 // Nom
     public void setNom(String Nom) {
@@ -26,11 +26,11 @@ public class UserModel {
     }
 // Prenom
     public void setPrenom(String Prenom) {
-        this.Prenom=Prenom;
+        this.prenom=Prenom;
     }
 
     public String getPrenom() {
-        return this.Prenom;
+        return this.prenom;
     }
 // Id 
     public int getId() {

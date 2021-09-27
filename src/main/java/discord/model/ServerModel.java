@@ -7,15 +7,15 @@ public class ServerModel {
 
 	private static int Id = 0;
 	private String Nom;
-	private List<String> ListUser=new ArrayList<String>();
-	private List<String> ListMessage=new ArrayList<String>();
+	private List<UserModel> ListUser=new ArrayList<UserModel>();
+	private List<MsgModel> ListMessage=new ArrayList<MsgModel>();
 	
 // Constructeur
 	public ServerModel() {
         Id++;
     }
 
-    public ServerModel(String Nom, String Prenom, List<String> ListUser, List<String> ListMessage) {
+    public ServerModel(String Nom, String Prenom, List<UserModel> ListUser, List<MsgModel> ListMessage) {
         Id++;
         this.Nom = Nom;
         this.ListUser = ListUser;
@@ -34,11 +34,11 @@ public class ServerModel {
         return this.Id;
     }
 
-    public List<String> getUsers(){
+    public List<UserModel> getUsers(){
     	return this.ListUser;
     }
     
-    public List<String> getMessages(){
+    public List<MsgModel> getMessages(){
     	return this.ListMessage;
     }
 }

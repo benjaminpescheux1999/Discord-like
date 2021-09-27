@@ -7,8 +7,8 @@ public class MsgModel {
 	private static int Id = 0;
 	private String Msg;
 	private Boolean State;
-	private String Emetteur;
-	private String Destinataire;
+	private int Emetteur;
+	private int Destinataire;
 	private long Date;
  
 	
@@ -19,7 +19,7 @@ public class MsgModel {
         this.Date=System.currentTimeMillis();
     }
 
-    public MsgModel(String Msg, Boolean State, String Emetteur, String Destinataire) {
+    public MsgModel(String Msg, Boolean State, int Emetteur, int Destinataire) {
         Id++;
         this.Msg = Msg;
         this.State=false;
@@ -48,19 +48,19 @@ public class MsgModel {
         return this.Id;
     }
 // Emetteur
-    public void setEmetteur(String Emetteur) {
+    public void setEmetteur(int Emetteur) {
         this.Emetteur=Emetteur;
     }
 
-    public String getEmetteur() {
+    public int getEmetteur() {
         return this.Emetteur;
     }  
 // Destinataire
-    public void setDestinataire(String Destinataire) {
+    public void setDestinataire(int Destinataire) {
         this.Destinataire=Destinataire;
     }
 
-    public String getDestinataire() {
+    public int getDestinataire() {
         return this.Destinataire;
     }
  // Date
