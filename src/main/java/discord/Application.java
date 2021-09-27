@@ -2,7 +2,7 @@ package discord;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import fr.formation.config.AppConfig;
+import discord.config.AppConfig;
 
 public class Application {
 
