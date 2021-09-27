@@ -33,4 +33,14 @@ public class UserService implements IUserService{
 		daoUser.editUser(id, nom, prenom);
 	}
 
+	public UserModel login(String nom, String password) {
+		// TODO Auto-generated method stub
+		return daoUser.login(nom, password);
+	}
+
+	public void subscription(UserModel user) {
+		// TODO Auto-generated method stub
+		daoUser.subscription(user);
+	}
+
 }

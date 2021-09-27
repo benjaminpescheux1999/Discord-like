@@ -9,29 +9,31 @@ import discord.model.MsgModel;
 @Repository
 public class MsgDao implements IMsgDao {
 
-	public MsgModel FindMsg(int id) {
+	public MsgModel findMsg(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public List<MsgModel> GetAllMessage(int id) {
+	public List<MsgModel> getAllMessage(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void DeleteMsg(int id) {
+	public void deleteMsg(int id) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void EditMsg(int id, String text) {
+	public void editMsg(int id, String text) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void SaveMsg(MsgModel message) {
+	public void saveMsg(MsgModel message) {
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }

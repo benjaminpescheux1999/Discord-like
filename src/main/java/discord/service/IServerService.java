@@ -4,6 +4,8 @@ import discord.model.ServerModel;
 import discord.model.UserModel;
 
 public interface IServerService {
+
+
 	public ServerModel findServer(int id);
 	
 	public void deleteServer(int id);
