@@ -34,4 +34,11 @@ public class ServerModel {
         return this.Id;
     }
 
+    public List<String> getUsers(){
+    	return this.ListUser;
+    }
+    
+    public List<String> getMessages(){
+    	return this.ListMessage;
+    }
 }
