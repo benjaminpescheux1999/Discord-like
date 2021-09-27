@@ -1,73 +1,70 @@
 package discord.model;
 
-import java.sql.Date;
-
 public class MsgModel {
 	
-	private static int Id = 0;
-	private String Msg;
-	private Boolean State;
-	private int Emetteur;
-	private int Destinataire;
-	private long Date;
+	private int id;
+	private String msg;
+	private Boolean state;
+	private int emetteur;
+	private int destinataire;
+	private long date;
  
 	
 // Constructeur
 	public MsgModel() {
-        Id++;
-        this.State=false;
-        this.Date=System.currentTimeMillis();
+        this.state=false;
+        this.date=System.currentTimeMillis();
     }
 
-    public MsgModel(String Msg, Boolean State, int Emetteur, int Destinataire) {
-        Id++;
-        this.Msg = Msg;
-        this.State=false;
-        this.Emetteur =Emetteur;
-        this.Destinataire=Destinataire;
-        this.Date=System.currentTimeMillis();
+    public MsgModel(int id, String Msg, Boolean State, int Emetteur, int Destinataire) {
+		this.id=id;
+        this.msg = Msg;
+        this.state=false;
+        this.emetteur =Emetteur;
+        this.destinataire=Destinataire;
+        this.date=System.currentTimeMillis();
     }
 // Message
-    public void setMsg(String Msg) {
-        this.Msg=Msg;
+    public void setmsg(String msg) {
+        this.msg=msg;
     }
 
-    public String getMsg() {
-        return this.Msg;
+    public String getmsg() {
+        return this.msg;
     }
 // State
-    public void setState(Boolean State) {
-        this.State=State;
+    public void setstate(Boolean state) {
+        this.state=state;
     }
 
-    public Boolean getState() {
-        return this.State;
+    public Boolean getstate() {
+        return this.state;
     }
 // Id 
-    public int getId() {
-        return this.Id;
+    public int getid() {
+        return this.id;
     }
 // Emetteur
-    public void setEmetteur(int Emetteur) {
-        this.Emetteur=Emetteur;
+    public void setemetteur(int emetteur) {
+        this.emetteur=emetteur;
     }
 
-    public int getEmetteur() {
-        return this.Emetteur;
+    public int getemetteur() {
+        return this.emetteur;
     }  
 // Destinataire
-    public void setDestinataire(int Destinataire) {
-        this.Destinataire=Destinataire;
+    public void setdestinataire(int destinataire) {
+        this.destinataire=destinataire;
     }
 
-    public int getDestinataire() {
-        return this.Destinataire;
+    public int getdestinataire() {
+        return this.destinataire;
     }
  // Date
-    public void setDate(long Date) {
-        this.Date=Date;
+    public void setdate(long date) {
+        this.date=date;
     }
-    public long getDate() {
-        return this.Date;
-    }  
+    public long getdate() {
+        return this.date;
+    }   
 }
