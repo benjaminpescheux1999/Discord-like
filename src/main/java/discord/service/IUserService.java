@@ -1,5 +1,7 @@
 package discord.service;
 
-public interface IUserService {
+import discord.model.UserModel;
 
+public interface IUserService {
+    public UserModel findById(int id);
 }
