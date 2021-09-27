@@ -3,4 +3,20 @@
   <groupId>fr.discord</groupId>
   <artifactId>discord-like</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	<spring.version>5.3.10</spring.version>
+  </properties>
+  
+ <dependencies>
+  	<!-- SPRING CONTEXT -->
+	<dependency>
+   	 	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    	<version>${spring.version}</version>
+	</dependency>
+  </dependencies>
+  
 </project>
