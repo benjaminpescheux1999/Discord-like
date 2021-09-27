@@ -11,27 +11,26 @@ import discord.model.UserModel;
 @Service
 public class ServerService implements IServerService{
 	@Autowired // On demande à SPRING (injection de dépendence) l'instance
-	@Qualifier("ServerDao")
 	private IServerDao daoServer;
 
-	public ServerModel FindServer(int id) {
+	public ServerModel findServer(int id) {
 		// TODO Auto-generated method stub
-		return daoServer.FindServer(id);
+		return daoServer.findServer(id);
 	}
 
-	public void DeleteServer(int id) {
+	public void deleteServer(int id) {
 		// TODO Auto-generated method stub
-		daoServer.DeleteServer(id);
+		daoServer.deleteServer(id);
 	}
 
-	public void SaveServer(ServerModel server) {
+	public void saveServer(ServerModel server) {
 		// TODO Auto-generated method stub
-		daoServer.SaveServer(server);
+		daoServer.saveServer(server);
 	}
 
-	public void AddUser(UserModel user) {
+	public void addUser(UserModel user) {
 		// TODO Auto-generated method stub
-		daoServer.AddUser(user);
+		daoServer.addUser(user);
 	}
 
 }

@@ -7,22 +7,32 @@ import discord.model.UserModel;
 @Repository
 public class UserDao implements IUserDao{
 
-	public UserModel FindUser(int id) {
+	public UserModel findUser(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void DeleteUser(int id) {
+	public void deleteUser(int id) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void SaveUser(UserModel user) {
+	public void editUser(int id, String nom, String prenom) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void EditUser(int id, String Nom, String Prenom) {
+	public void saveUser(UserModel user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public UserModel login(String nom, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void subscription(UserModel user) {
 		// TODO Auto-generated method stub
 		
 	}

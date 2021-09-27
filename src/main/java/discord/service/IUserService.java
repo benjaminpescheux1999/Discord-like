@@ -3,11 +3,16 @@ package discord.service;
 import discord.model.UserModel;
 
 public interface IUserService {
-	public UserModel FindUser(int id);
 
-	public void DeleteUser(int id);
+	public UserModel findUser(int id);
+
+	public void deleteUser(int id);
 	
-	public void EditUser(int id, String Nom, String Prenom);
+	public void editUser(int id, String nom, String prenom);
 	
-	public void SaveUser(UserModel user);
+	public void saveUser(UserModel user);
+	
+	public UserModel login(String nom, String password);
+	
+	public void subscription(UserModel user);
 }

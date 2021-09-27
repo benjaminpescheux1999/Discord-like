@@ -8,29 +8,26 @@ import discord.model.UserModel;
 @Repository
 public class ServerDao implements IServerDao{
 
-	public ServerModel FindServer(int id) {
+	public ServerModel findServer(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public void DeleteServer(int id) {
+	public void deleteServer(int id) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void EditServer(int id, String text) {
+	public void saveServer(ServerModel server) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void SaveServer(ServerModel server) {
+	public void addUser(UserModel user) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void AddUser(UserModel user) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }

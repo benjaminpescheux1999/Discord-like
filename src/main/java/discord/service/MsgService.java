@@ -12,32 +12,31 @@ import discord.model.MsgModel;
 @Service
 public class MsgService implements IMsgService{
 	@Autowired // On demande à SPRING (injection de dépendence) l'instance
-	@Qualifier("MsgDao")
 	private IMsgDao daoMsg;
 
-	public MsgModel FindMsg(int id) {
+	public MsgModel findMsg(int id) {
 		// TODO Auto-generated method stub
-		return daoMsg.FindMsg(id);
+		return daoMsg.findMsg(id);
 	}
 
-	public List<MsgModel> GetAllMessage(int id) {
+	public List<MsgModel> getAllMessage(int id) {
 		// TODO Auto-generated method stub
-		return daoMsg.GetAllMessage(id);
+		return daoMsg.getAllMessage(id);
 	}
 
-	public void DeleteMsg(int id) {
+	public void deleteMsg(int id) {
 		// TODO Auto-generated method stub
-		daoMsg.DeleteMsg(id);
+		daoMsg.deleteMsg(id);
 	}
 
-	public void EditMsg(int id, String text) {
+	public void editMsg(int id, String text) {
 		// TODO Auto-generated method stub
-		daoMsg.EditMsg(id,text);
+		daoMsg.editMsg(id,text);
 	}
 
-	public void SaveMsg(MsgModel message) {
+	public void saveMsg(MsgModel message) {
 		// TODO Auto-generated method stub
-		daoMsg.SaveMsg(message);
+		daoMsg.saveMsg(message);
 	}
 
 }
