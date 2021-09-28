@@ -3,12 +3,32 @@ package discord.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity //Classe persiste
+@Table(name = "server")
 public class ServerModel {
-
+	@Id //attribut clé primaire
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
+	@Column(name = "Server_ID")
 	private int id = 0;
+	
+	@Column(name = "Server_Nom", length = 100, nullable = false)
 	private String nom;
-	private List<UserModel> listuser=new ArrayList<UserModel>();
-	private List<MsgModel> listmessage=new ArrayList<MsgModel>();
+
+	
+	@ManyToMany(mappedBy = "server")
+	private List<UserModel> users;
+	
+	@OneToMany(mappedBy = "server")
+	private List<UserModel> messages;
+
 	
 // Constructeur
 	public ServerModel() {

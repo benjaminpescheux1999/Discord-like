@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity //Classe persisté
@@ -13,17 +16,21 @@ public class UserModel {
 
 	@Id //attribut clé primaire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
-	@Column(name = "USR_ID")
+	@Column(name = "USER_ID")
 	private int id;
 	
-	@Column(name = "USR_NOM", length = 50, nullable = false)
+	@Column(name = "USER_NOM", length = 50, nullable = false)
 	private String nom;
 	
-	@Column(name = "USR_PRENOM", length = 50, nullable = false)
+	@Column(name = "USER_PRENOM", length = 50, nullable = false)
 	private String prenom;
 	
-	@Column(name = "USR_PASSWORD", length = 50, nullable = false)
+	@Column(name = "USER_PASSWORD", length = 50, nullable = false)
 	private String password;
+	
+	@ManyToMany
+	@JoinColumn(name = "User_Server_ID")
+	private ServerModel users;
 	
 // Constructeur
 	public UserModel() {
