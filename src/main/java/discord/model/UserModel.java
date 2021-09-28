@@ -11,37 +11,37 @@ public class UserModel {
 	public UserModel() {
     }
 
-    public UserModel(int id, String nom, String prenom, String password) {
-    	this.id=id;
+    public UserModel( String nom, String prenom, String password) {
+    	
         this.nom = nom;
         this.prenom = prenom;
         this.password=password;
     }
 // Nom
-    public void setnom(String nom) {
+    public void setNom(String nom) {
         this.nom=nom;
     }
 
-    public String getnom() {
+    public String getNom() {
         return this.nom;
     }
 // Prenom
-    public void setprenom(String prenom) {
+    public void setPrenom(String prenom) {
         this.prenom=prenom;
     }
 
-    public String getprenom() {
+    public String getPrenom() {
         return this.prenom;
     }
 // Id 
-    public int getid() {
+    public int getId() {
         return this.id;
     }
     // Password
-    public void setpassword(String password) {
+    public void setPassword(String password) {
         this.password=password;
     }
-    public String getpassword() {
+    public String getPassword() {
         return this.password;
     } 
 }

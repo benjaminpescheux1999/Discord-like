@@ -15,30 +15,30 @@ public class ServerModel {
         
     }
 
-    public ServerModel(int id, String nom, String prenom, List<UserModel> listuser, List<MsgModel> listmessage) {
-        this.id=id;
+    public ServerModel( String nom, String prenom, List<UserModel> listuser, List<MsgModel> listmessage) {
+       
     	this.nom = nom;
         this.listuser = listuser;
         this.listmessage = listmessage;
     }
 // Nom
-    public void setnom(String nom) {
+    public void setNom(String nom) {
         this.nom=nom;
     }
 
-    public String getnom() {
+    public String getNom() {
         return this.nom;
     }
 // Id 
-    public int getid() {
+    public int getId() {
         return this.id;
     }
 
-    public List<UserModel> getusers(){
+    public List<UserModel> getUsers(){
     	return this.listuser;
     }
     
-    public List<MsgModel> getmessages(){
+    public List<MsgModel> getMessages(){
     	return this.listmessage;
     }
 }

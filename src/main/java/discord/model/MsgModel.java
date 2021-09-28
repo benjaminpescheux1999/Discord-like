@@ -16,8 +16,8 @@ public class MsgModel {
         this.date=System.currentTimeMillis();
     }
 
-    public MsgModel(int id, String Msg, Boolean State, int Emetteur, int Destinataire) {
-		this.id=id;
+    public MsgModel( String Msg, Boolean State, int Emetteur, int Destinataire) {
+		
         this.msg = Msg;
         this.state=false;
         this.emetteur =Emetteur;
@@ -25,46 +25,46 @@ public class MsgModel {
         this.date=System.currentTimeMillis();
     }
 // Message
-    public void setmsg(String msg) {
+    public void setMsg(String msg) {
         this.msg=msg;
     }
 
-    public String getmsg() {
+    public String getMsg() {
         return this.msg;
     }
 // State
-    public void setstate(Boolean state) {
+    public void setState(Boolean state) {
         this.state=state;
     }
 
-    public Boolean getstate() {
+    public Boolean getState() {
         return this.state;
     }
 // Id 
-    public int getid() {
+    public int getId() {
         return this.id;
     }
 // Emetteur
-    public void setemetteur(int emetteur) {
+    public void setEmetteur(int emetteur) {
         this.emetteur=emetteur;
     }
 
-    public int getemetteur() {
+    public int getEmetteur() {
         return this.emetteur;
     }  
 // Destinataire
-    public void setdestinataire(int destinataire) {
+    public void setDestinataire(int destinataire) {
         this.destinataire=destinataire;
     }
 
-    public int getdestinataire() {
+    public int getDestinataire() {
         return this.destinataire;
     }
  // Date
-    public void setdate(long date) {
+    public void setDate(long date) {
         this.date=date;
     }
-    public long getdate() {
+    public long getDate() {
         return this.date;
     }   
 }
