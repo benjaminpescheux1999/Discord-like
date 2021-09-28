@@ -1,6 +1,5 @@
 package discord.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,7 +26,7 @@ public class ServerModel {
 	private List<UserModel> users;
 	
 	@OneToMany(mappedBy = "server")
-	private List<UserModel> messages;
+	private List<MsgModel> messages;
 
 	
 // Constructeur
@@ -35,11 +34,11 @@ public class ServerModel {
         
     }
 
-    public ServerModel( String nom, String prenom, List<UserModel> listuser, List<MsgModel> listmessage) {
+    public ServerModel( String nom, String prenom, List<UserModel> users, List<MsgModel> messages) {
        
     	this.nom = nom;
-        this.listuser = listuser;
-        this.listmessage = listmessage;
+        this.users = users;
+        this.messages = messages;
     }
 // Nom
     public void setNom(String nom) {
@@ -55,10 +54,10 @@ public class ServerModel {
     }
 
     public List<UserModel> getUsers(){
-    	return this.listuser;
+    	return this.users;
     }
     
     public List<MsgModel> getMessages(){
-    	return this.listmessage;
+    	return this.messages;
     }
 }
