@@ -1,25 +1,44 @@
 package discord.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity //Classe persiste
+@Table(name = "server")
 public class ServerModel {
-
+	@Id //attribut clé primaire
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
+	@Column(name = "Server_ID")
 	private int id = 0;
+	
+	@Column(name = "Server_Nom", length = 100, nullable = false)
 	private String nom;
-	private List<UserModel> listuser=new ArrayList<UserModel>();
-	private List<MsgModel> listmessage=new ArrayList<MsgModel>();
+
+	
+	@ManyToMany(mappedBy = "server")
+	private List<UserModel> users;
+	
+	@OneToMany(mappedBy = "server")
+	private List<MsgModel> messages;
+
 	
 // Constructeur
 	public ServerModel() {
         
     }
 
-    public ServerModel( String nom, String prenom, List<UserModel> listuser, List<MsgModel> listmessage) {
+    public ServerModel( String nom, String prenom, List<UserModel> users, List<MsgModel> messages) {
        
     	this.nom = nom;
-        this.listuser = listuser;
-        this.listmessage = listmessage;
+        this.users = users;
+        this.messages = messages;
     }
 // Nom
     public void setNom(String nom) {
@@ -35,10 +54,10 @@ public class ServerModel {
     }
 
     public List<UserModel> getUsers(){
-    	return this.listuser;
+    	return this.users;
     }
     
     public List<MsgModel> getMessages(){
-    	return this.listmessage;
+    	return this.messages;
     }
 }
