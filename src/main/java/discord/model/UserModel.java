@@ -1,10 +1,28 @@
 package discord.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity //Classe persisté
+@Table(name = "user") //On nomme la table "user"
 public class UserModel {
 
+	@Id //attribut clé primaire
+	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
+	@Column(name = "USR_ID")
 	private int id;
+	
+	@Column(name = "USR_NOM", length = 50, nullable = false)
 	private String nom;
+	
+	@Column(name = "USR_PRENOM", length = 50, nullable = false)
 	private String prenom;
+	
+	@Column(name = "USR_PASSWORD", length = 50, nullable = false)
 	private String password;
 	
 // Constructeur
