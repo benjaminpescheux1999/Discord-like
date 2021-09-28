@@ -26,7 +26,7 @@ public class JpaConfig {
 		BasicDataSource dataSource = new BasicDataSource();
 		
 		dataSource.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		dataSource.setUrl("jdbc:sqlserver://localhost:1433;instance=SQLEXPRESS01;databaseName=Discord");
+		dataSource.setUrl("jdbc:sqlserver://localhost:1433;instance=SQLEXPRESS2017;databaseName=Discord");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("Not24Get");
 		dataSource.setMaxTotal(10);
