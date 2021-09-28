@@ -1,28 +1,50 @@
 package discord.model;
 
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "message") //On nomme la table "message"
 public class MsgModel {
-	
+
+    @Id //attribut clé primaire
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MSG_ID")
 	private int id;
+    @Column(name = "MSG_TEXT", nullable = false)
 	private String msg;
-	private Boolean state;
-	private int emetteur;
-	private int destinataire;
-	private long date;
+    @ManyToOne
+    @JoinColumn(name = "MSG_USER_ID")
+	private UserModel emetteur;
+    @ManyToOne
+    @JoinColumn(name = "MSG_SERVER_ID")
+	private ServerModel destinataire;
+    @Column(name = "MSG_DATE", nullable = false)
+	private LocalDateTime date;
  
+	@ManyToOne
+    @JoinColumn(name = "Msg_Server_ID")
+    private ServerModel messages;
 	
 // Constructeur
 	public MsgModel() {
-        this.state=false;
-        this.date=System.currentTimeMillis();
+        this.date=date;
     }
 
-    public MsgModel( String Msg, Boolean State, int Emetteur, int Destinataire) {
+    public MsgModel( String Msg, Boolean State, UserModel Emetteur, ServerModel Destinataire) {
 		
         this.msg = Msg;
-        this.state=false;
         this.emetteur =Emetteur;
         this.destinataire=Destinataire;
-        this.date=System.currentTimeMillis();
+        this.date=date;
     }
 // Message
     public void setMsg(String msg) {
@@ -32,39 +54,31 @@ public class MsgModel {
     public String getMsg() {
         return this.msg;
     }
-// State
-    public void setState(Boolean state) {
-        this.state=state;
-    }
-
-    public Boolean getState() {
-        return this.state;
-    }
 // Id 
     public int getId() {
         return this.id;
     }
 // Emetteur
-    public void setEmetteur(int emetteur) {
+    public void setEmetteur(UserModel emetteur) {
         this.emetteur=emetteur;
     }
 
-    public int getEmetteur() {
+    public UserModel getEmetteur() {
         return this.emetteur;
     }  
 // Destinataire
-    public void setDestinataire(int destinataire) {
+    public void setDestinataire(ServerModel destinataire) {
         this.destinataire=destinataire;
     }
 
-    public int getDestinataire() {
+    public ServerModel getDestinataire() {
         return this.destinataire;
     }
  // Date
-    public void setDate(long date) {
+    public void setDate(LocalDateTime date) {
         this.date=date;
     }
-    public long getDate() {
+    public LocalDateTime getDate() {
         return this.date;
     }   
 }
