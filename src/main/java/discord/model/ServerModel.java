@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "server")
 public class ServerModel {
 	
-	@Id //attribut clé primaire
+	@Id //attribut cle primaire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
 	@Column(name = "SERVER_ID")
 	private int id = 0;

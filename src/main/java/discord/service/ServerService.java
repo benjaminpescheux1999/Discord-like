@@ -10,7 +10,7 @@ import discord.model.ServerModel;
 
 @Service
 public class ServerService implements IServerService{
-	@Autowired // On demande à SPRING (injection de dépendence) l'instance
+	@Autowired // On demand à SPRING (injection dependence) l'instance
 	private IServerDao daoServer;
 
 	public ServerModel findServer(int id) {
