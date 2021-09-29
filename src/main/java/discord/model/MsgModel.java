@@ -19,8 +19,13 @@ public class MsgModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MSG_ID")
 	private int id;
+    
     @Column(name = "MSG_TEXT", nullable = false)
 	private String msg;
+    
+    @Column(name = "MSG_DATE", nullable = false)
+  	private LocalDateTime date;
+    
     @ManyToOne
     @JoinColumn(name = "MSG_USER_EMETTEUR")
 	private UserModel emetteur;
@@ -28,27 +33,21 @@ public class MsgModel {
     @ManyToOne
     @JoinColumn(name = "MSG_SERVER_DESTINATAIRE")
 	private ServerModel destinataire;
-    
-    @Column(name = "MSG_DATE", nullable = false)
-	private LocalDateTime date;
- 
-	@ManyToOne
-    @JoinColumn(name = "Msg_Server_ID")
-    private ServerModel messages;
 	
 // Constructeur
 	public MsgModel() {
         this.date=date;
     }
 
-    public MsgModel( String Msg, Boolean State, UserModel Emetteur, ServerModel Destinataire) {
+    public MsgModel( String Msg, LocalDateTime date,UserModel Emetteur, ServerModel Destinataire) {
 		
         this.msg = Msg;
         this.emetteur =Emetteur;
         this.destinataire=Destinataire;
         this.date=date;
     }
-// Message
+
+	// Message
     public void setMsg(String msg) {
         this.msg=msg;
     }

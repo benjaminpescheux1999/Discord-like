@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Entity //Classe persiste
 @Table(name = "server")
 public class ServerModel {
+	
 	@Id //attribut clé primaire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
 	@Column(name = "SERVER_ID")
@@ -20,21 +21,19 @@ public class ServerModel {
 	
 	@Column(name = "SERVER_NOM", length = 100, nullable = false)
 	private String nom;
-
 	
-	@ManyToMany(mappedBy = "SERVER_USER")
+	@ManyToMany(mappedBy = "servers")
 	private List<UserModel> users;
 	
-	@OneToMany(mappedBy = "SERVER_MESSAGE")
+	@OneToMany(mappedBy = "destinataire")
 	private List<MsgModel> messages;
 
-	
 // Constructeur
 	public ServerModel() {
         
     }
 
-    public ServerModel( String nom, String prenom, List<UserModel> users, List<MsgModel> messages) {
+    public ServerModel( String nom, List<UserModel> users, List<MsgModel> messages) {
        
     	this.nom = nom;
         this.users = users;

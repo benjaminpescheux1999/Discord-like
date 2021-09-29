@@ -30,20 +30,23 @@ public class UserModel {
 	private String password;
 	
 	@ManyToMany
-	@JoinColumn(name = "USER_SERVER_ID")
 	private List<ServerModel> servers;
+	
 	
 // Constructeur
 	public UserModel() {
     }
 
-    public UserModel( String nom, String prenom, String password) {
+    public UserModel( String nom, String prenom, String password,List<ServerModel> servers) {
     	
         this.nom = nom;
         this.prenom = prenom;
         this.password=password;
+        this.servers = servers;
     }
-// Nom
+
+
+	// Nom
     public void setNom(String nom) {
         this.nom=nom;
     }
@@ -70,4 +73,13 @@ public class UserModel {
     public String getPassword() {
         return this.password;
     } 
+    
+    //List Servers
+    public List<ServerModel> getServers() {
+		return servers;
+	}
+
+	public void setServers(List<ServerModel> servers) {
+		this.servers = servers;
+	}
 }
