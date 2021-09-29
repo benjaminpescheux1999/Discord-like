@@ -1,12 +1,12 @@
 package discord.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import discord.dao.IServerDao;
 import discord.model.ServerModel;
-import discord.model.UserModel;
 
 @Service
 public class ServerService implements IServerService{
@@ -15,22 +15,22 @@ public class ServerService implements IServerService{
 
 	public ServerModel findServer(int id) {
 		// TODO Auto-generated method stub
-		return daoServer.findServer(id);
+		return daoServer.findById(id);
 	}
 
 	public void deleteServer(int id) {
 		// TODO Auto-generated method stub
-		daoServer.deleteServer(id);
+		daoServer.deleteById(id);
 	}
 
 	public void saveServer(ServerModel server) {
 		// TODO Auto-generated method stub
-		daoServer.saveServer(server);
+		daoServer.save(server);
 	}
 
-	public void addUser(UserModel user) {
+	public List<ServerModel> getAllServer() {
 		// TODO Auto-generated method stub
-		daoServer.addUser(user);
+		return daoServer.findAll();
 	}
 
 }

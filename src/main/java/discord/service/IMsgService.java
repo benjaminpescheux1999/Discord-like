@@ -9,12 +9,10 @@ public interface IMsgService {
 	
 	public MsgModel findMsg(int id);
 	
-	public List<MsgModel> getAllMessage(int id);
+	public List<MsgModel> getAllMessage();
 	
 	public void deleteMsg(int id);
-	
-	public void editMsg(int id, String text);
-	
+		
 	public void saveMsg(MsgModel message);
 	
 

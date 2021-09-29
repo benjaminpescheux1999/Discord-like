@@ -15,32 +15,22 @@ public class UserService implements IUserService{
 
 	public UserModel findUser(int id) {
 		// TODO Auto-generated method stub
-		return daoUser.findUser(id);
+		return daoUser.findById(id);
 	}
 
 	public void deleteUser(int id) {
 		// TODO Auto-generated method stub
-		daoUser.deleteUser(id);
+		daoUser.deleteById(id);
 	}
 
 	public void saveUser(UserModel user) {
 		// TODO Auto-generated method stub
-		daoUser.saveUser(user);
-	}
-
-	public void editUser(int id, String nom, String prenom) {
-		// TODO Auto-generated method stub
-		daoUser.editUser(id, nom, prenom);
+		daoUser.save(user);
 	}
 
 	public UserModel login(String nom, String password) {
 		// TODO Auto-generated method stub
 		return daoUser.login(nom, password);
-	}
-
-	public void subscription(UserModel user) {
-		// TODO Auto-generated method stub
-		daoUser.subscription(user);
 	}
 
 }

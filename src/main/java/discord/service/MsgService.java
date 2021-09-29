@@ -3,7 +3,6 @@ package discord.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import discord.dao.IMsgDao;
@@ -16,27 +15,23 @@ public class MsgService implements IMsgService{
 
 	public MsgModel findMsg(int id) {
 		// TODO Auto-generated method stub
-		return daoMsg.findMsg(id);
+		return daoMsg.findById(id);
 	}
 
-	public List<MsgModel> getAllMessage(int id) {
+	public List<MsgModel> getAllMessage() {
 		// TODO Auto-generated method stub
-		return daoMsg.getAllMessage(id);
+		return daoMsg.findAll();
 	}
 
 	public void deleteMsg(int id) {
 		// TODO Auto-generated method stub
-		daoMsg.deleteMsg(id);
+		daoMsg.deleteById(id);
 	}
 
-	public void editMsg(int id, String text) {
-		// TODO Auto-generated method stub
-		daoMsg.editMsg(id,text);
-	}
 
 	public void saveMsg(MsgModel message) {
 		// TODO Auto-generated method stub
-		daoMsg.saveMsg(message);
+		daoMsg.save(message);
 	}
 
 }
