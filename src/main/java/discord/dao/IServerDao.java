@@ -1,16 +1,12 @@
 package discord.dao;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import discord.model.ServerModel;
 import discord.model.UserModel;
 
-public interface IServerDao {
+public interface IServerDao extends IDao<ServerModel,Integer>{
 
-	public ServerModel findServer(int id);
 	
-	public void deleteServer(int id);
-	
-	public void saveServer(ServerModel server);
-	
-	public void addUser(UserModel user);
 
 }
