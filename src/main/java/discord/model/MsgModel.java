@@ -36,15 +36,15 @@ public class MsgModel {
 	
 // Constructeur
 	public MsgModel() {
-        this.date=date;
+        this.date=LocalDateTime.now();
     }
 
-    public MsgModel( String Msg, LocalDateTime date,UserModel Emetteur, ServerModel Destinataire) {
+    public MsgModel( String Msg,UserModel Emetteur, ServerModel Destinataire) {
 		
         this.msg = Msg;
         this.emetteur =Emetteur;
         this.destinataire=Destinataire;
-        this.date=date;
+        this.date=LocalDateTime.now();
     }
 
 	// Message
