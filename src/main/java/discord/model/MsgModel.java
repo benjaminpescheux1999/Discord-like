@@ -22,11 +22,13 @@ public class MsgModel {
     @Column(name = "MSG_TEXT", nullable = false)
 	private String msg;
     @ManyToOne
-    @JoinColumn(name = "MSG_USER_ID")
+    @JoinColumn(name = "MSG_USER_EMETTEUR")
 	private UserModel emetteur;
+    
     @ManyToOne
-    @JoinColumn(name = "MSG_SERVER_ID")
+    @JoinColumn(name = "MSG_SERVER_DESTINATAIRE")
 	private ServerModel destinataire;
+    
     @Column(name = "MSG_DATE", nullable = false)
 	private LocalDateTime date;
  

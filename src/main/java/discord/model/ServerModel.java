@@ -15,17 +15,17 @@ import javax.persistence.Table;
 public class ServerModel {
 	@Id //attribut clé primaire
 	@GeneratedValue(strategy = GenerationType.IDENTITY)//Auto increment
-	@Column(name = "Server_ID")
+	@Column(name = "SERVER_ID")
 	private int id = 0;
 	
-	@Column(name = "Server_Nom", length = 100, nullable = false)
+	@Column(name = "SERVER_NOM", length = 100, nullable = false)
 	private String nom;
 
 	
-	@ManyToMany(mappedBy = "server")
+	@ManyToMany(mappedBy = "SERVER_USER")
 	private List<UserModel> users;
 	
-	@OneToMany(mappedBy = "server")
+	@OneToMany(mappedBy = "SERVER_MESSAGE")
 	private List<MsgModel> messages;
 
 	
