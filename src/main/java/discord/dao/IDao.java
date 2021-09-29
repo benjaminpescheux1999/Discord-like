@@ -8,4 +8,5 @@ public interface IDao<T, Id> {
 	public T findById(Id id);
 	public T save(T entity);
 	public void deleteById(Id id);
+	
 }
