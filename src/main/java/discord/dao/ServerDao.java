@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
+import discord.model.MsgModel;
 import discord.model.ServerModel;
 
 @Repository
@@ -22,12 +23,15 @@ public class ServerDao implements IServerDao{
 
 	public List<ServerModel> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.em.createQuery("select s from server",ServerModel.class)
+				.getResultList();
 	}
 
 	public ServerModel findById(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return this.em.createQuery("select s from server s where s.SERVER_ID = :?1",ServerModel.class)
+				.setParameter(1, id)
+				.getSingleResult();
 	}
 
 	public ServerModel save(ServerModel entity) {

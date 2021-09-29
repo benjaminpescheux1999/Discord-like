@@ -17,13 +17,13 @@ public class MsgDao implements IMsgDao{
 	
 	public List<MsgModel> findAll() {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select m from Message",MsgModel.class)
+		return this.em.createQuery("select m from message",MsgModel.class)
 				.getResultList();
 	}
 
 	public MsgModel findById(Integer id) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select m from Message p where m.MSG_ID = :?1",MsgModel.class)
+		return this.em.createQuery("select m from message m where m.MSG_ID = :?1",MsgModel.class)
 				.setParameter(1, id)
 				.getSingleResult();
 	}

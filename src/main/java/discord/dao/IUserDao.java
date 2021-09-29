@@ -8,7 +8,7 @@ public interface IUserDao extends IDao<UserModel,Integer>{
 
 	public UserModel login(String nom, String password);
 	
-	public void subscription(UserModel user);
+	
 		
 
 	

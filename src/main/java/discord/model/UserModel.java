@@ -1,5 +1,7 @@
 package discord.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity //Classe persisté
@@ -29,8 +30,8 @@ public class UserModel {
 	private String password;
 	
 	@ManyToMany
-	@JoinColumn(name = "User_Server_ID")
-	private ServerModel users;
+	@JoinColumn(name = "USER_SERVER_ID")
+	private List<ServerModel> servers;
 	
 // Constructeur
 	public UserModel() {
