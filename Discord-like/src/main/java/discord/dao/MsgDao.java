@@ -46,4 +46,6 @@ public class MsgDao implements IMsgDao{
 		this.em.remove(this.findById(id));
 	}
 
+
+
 }

@@ -14,6 +14,5 @@ public interface IMsgService {
 	public void deleteMsg(int id);
 		
 	public void saveMsg(MsgModel message);
-	
 
 }
