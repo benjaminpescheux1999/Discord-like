@@ -34,4 +34,5 @@ public class MsgService implements IMsgService{
 		daoMsg.save(message);
 	}
 
+
 }
