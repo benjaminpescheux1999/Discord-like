@@ -44,7 +44,13 @@ public class UserModel {
         this.password=password;
         this.servers = servers;
     }
-
+    
+    public UserModel( String nom, String prenom, String password) {
+    	
+        this.nom = nom;
+        this.prenom = prenom;
+        this.password=password;
+    }
 
 	// Nom
     public void setNom(String nom) {

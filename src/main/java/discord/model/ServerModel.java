@@ -33,7 +33,14 @@ public class ServerModel {
         
     }
 
-    public ServerModel( String nom, List<UserModel> users, List<MsgModel> messages) {
+	public ServerModel( String nom) {
+	       
+    	this.nom = nom;
+    }
+	
+
+
+	public ServerModel( String nom, List<UserModel> users, List<MsgModel> messages) {
        
     	this.nom = nom;
         this.users = users;
@@ -51,11 +58,19 @@ public class ServerModel {
     public int getId() {
         return this.id;
     }
-
+//List Users
     public List<UserModel> getUsers(){
     	return this.users;
     }
     
+    public void setUsers(List<UserModel> users) {
+		this.users = users;
+	}
+//List Messages
+	public void setMessages(List<MsgModel> messages) {
+		this.messages = messages;
+	}
+	
     public List<MsgModel> getMessages(){
     	return this.messages;
     }
