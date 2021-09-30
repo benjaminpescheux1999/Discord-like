@@ -16,8 +16,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableTransactionManagement //Activer les annotations @Transactionnal
-@EnableJpaRepositories("discord.dao") // Activer spring-data-jpa
+@EnableTransactionManagement //Activate l e s annotations @Transactionnal
+@EnableJpaRepositories("discord.dao") // Activate spring-data-j pa
 public class JpaConfig {
 	
 	@Bean
@@ -35,7 +35,7 @@ public class JpaConfig {
 	}
 	
 	
-	//Configuration de EntityManagerFactory pour fabriquer des EntityManager
+	//Configuration d e EntityManagerFactory pour f a b r i q u e d e s EntityManager
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
 		LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
@@ -56,7 +56,7 @@ public class JpaConfig {
 		return emf;
 	}
 	
-	//Configuration du gestionnaire de transactions
+	//Configuration d u g e s t i o n n a i r e d e transactions
 	@Bean
 	public JpaTransactionManager transactionManager(EntityManagerFactory emf) {
 		
