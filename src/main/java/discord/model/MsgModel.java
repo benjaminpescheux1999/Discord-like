@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "message") //On nomme la table "message"
 public class MsgModel {
 
-    @Id //attribut clé primaire
+    @Id //attribut cle primaire
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MSG_ID")
 	private int id;
