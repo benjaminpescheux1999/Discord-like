@@ -7,12 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity //Classe persisté
-@Table(name = "user") //On nomme la table "user"
+@Table(name = "[user]") //On nomme la table "user"
 public class UserModel {
 
 	@Id //attribut clé primaire

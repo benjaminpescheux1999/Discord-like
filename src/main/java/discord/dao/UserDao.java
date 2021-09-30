@@ -7,8 +7,6 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import discord.model.MsgModel;
-import discord.model.ServerModel;
 import discord.model.UserModel;
 
 @Repository
