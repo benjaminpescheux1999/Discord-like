@@ -4,10 +4,7 @@
 	<head>
 	</head>
 	<body>
-		<h1>Hello ${ utilisateur } and ${ password }</h1>
-		<c:forEach items="${utilisateurs}" var="utilisateur">
-		<li>${utilisateur }
-		</li>
-		</c:forEach>
+		<h1>Hello ${ username } and ${ password }</h1>
+	
 	</body>
 </html>
