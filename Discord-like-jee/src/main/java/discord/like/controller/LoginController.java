@@ -8,18 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import discord.like.dto.LoginDto;
 
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+
 	@GetMapping
-	public String login() {
+	public String login(Model model) {
+		
 		return "login";
 	}
+	
 	@PostMapping
-	public String login(LoginDto login, Model model) {
-		model.addAttribute("utilisateur", login.getUsername());
-		model.addAttribute("password", login.getPassword());
-
+	public String login(LoginDto formLogin, Model model) {
+		
+		model.addAttribute("utilisateur",formLogin.getLogin());
+		
 		return "home";
 	}
 }
