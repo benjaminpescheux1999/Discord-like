@@ -6,3 +6,4 @@ target/
 src/main/java/discord/config/JpaConfig
 .metadata
 /bin/
+Servers
