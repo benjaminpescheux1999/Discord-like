@@ -6,13 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import discord.dao.UserDao;
 import discord.like.dto.LoginDto;
+import discord.model.UserModel;
 
 
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+	
+	private UserDao userDao;
 
 	@GetMapping
 	public String login(Model model) {
@@ -23,7 +27,13 @@ public class LoginController {
 	@PostMapping
 	public String login(LoginDto formLogin, Model model) {
 		
-		model.addAttribute("login",formLogin.getLogin());
+		if(formLogin.getUsername() != null && formLogin.getPassword() !="") {
+		UserModel user = userDao.login(formLogin.getUsername(), formLogin.getPassword());
+		model.addAttribute("username",user.getPrenom());
+		model.addAttribute("password",user.getPrenom());
+		
+		
+	}
 		
 		return "home";
 	}

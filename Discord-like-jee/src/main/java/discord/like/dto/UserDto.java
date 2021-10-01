@@ -1,9 +1,5 @@
 package discord.like.dto;
 
-import java.util.List;
-
-import discord.model.ServerModel;
-
 public class UserDto {
 	private String nom;
 	private String prenom;
