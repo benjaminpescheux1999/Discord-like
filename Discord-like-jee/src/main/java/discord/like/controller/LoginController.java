@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import discord.like.dto.LoginDto;
 
 
+
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -22,7 +23,7 @@ public class LoginController {
 	@PostMapping
 	public String login(LoginDto formLogin, Model model) {
 		
-		model.addAttribute("utilisateur",formLogin.getLogin());
+		model.addAttribute("login",formLogin.getLogin());
 		
 		return "home";
 	}
