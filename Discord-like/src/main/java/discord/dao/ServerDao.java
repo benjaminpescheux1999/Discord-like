@@ -17,13 +17,13 @@ public class ServerDao implements IServerDao{
 
 	public List<ServerModel> findAll() {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select s from server",ServerModel.class)
+		return this.em.createQuery("select s from ServerModel s",ServerModel.class)
 				.getResultList();
 	}
 
 	public ServerModel findById(Integer id) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select s from server s where s.SERVER_ID = :?1",ServerModel.class)
+		return this.em.createQuery("select s from ServerModel s where s.id = ?1",ServerModel.class)
 				.setParameter(1, id)
 				.getSingleResult();
 	}
@@ -44,6 +44,7 @@ public class ServerDao implements IServerDao{
 	public void deleteById(Integer id) {
 		// TODO Auto-generated method stub
 		this.em.remove(this.findById(id));
+
 	}
 	
 	

@@ -33,4 +33,10 @@ public class ServerService implements IServerService{
 		return daoServer.findAll();
 	}
 
+	@Override
+	public List<ServerModel> findAll() {
+		// TODO Auto-generated method stub
+		return daoServer.findAll();
+	}
+
 }

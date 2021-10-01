@@ -13,5 +13,7 @@ public interface IServerService {
 	public void deleteServer(int id);
 	
 	public void saveServer(ServerModel server);
+
+	public List<ServerModel> findAll();
 	
 }
