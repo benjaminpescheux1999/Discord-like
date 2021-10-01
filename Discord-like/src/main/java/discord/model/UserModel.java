@@ -11,7 +11,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity //Classe persisté
-@Table(name = "[user]") //On nomme la table "user"
+@Table(name = "users") //On nomme la table "user"
 public class UserModel {
 
 	@Id //attribut clé primaire
@@ -28,9 +28,11 @@ public class UserModel {
 	@Column(name = "USER_PASSWORD", length = 50, nullable = false)
 	private String password;
 	
+	@Column(name = "USER_MAIL", length = 50)
+	private String mail;
+	
 	@ManyToMany
 	private List<ServerModel> servers;
-	
 	
 // Constructeur
 	public UserModel() {
@@ -42,13 +44,15 @@ public class UserModel {
         this.prenom = prenom;
         this.password=password;
         this.servers = servers;
+        
     }
     
-    public UserModel( String nom, String prenom, String password) {
+    public UserModel( String nom, String prenom, String password,String mail) {
     	
         this.nom = nom;
         this.prenom = prenom;
         this.password=password;
+        this.mail=mail;
     }
 
 	// Nom
@@ -78,11 +82,20 @@ public class UserModel {
     public String getPassword() {
         return this.password;
     } 
-    
+    //mail
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
     //List Servers
     public List<ServerModel> getServers() {
 		return servers;
 	}
+
 
 	public void setServers(List<ServerModel> servers) {
 		this.servers = servers;
