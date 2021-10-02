@@ -35,7 +35,7 @@
 									<td><a href="">${ server.getNom() }</a></td>
 									<td>|</td>
 									<td>
-										<a href="home/editerserver?id=${ server.id }">Editer</a>
+										<a href="home/modifierserver?id=${ server.id }&nom=${ server.nom }">Editer</a>
 										<a href="home/supprimeserver?id=${ server.id }">Supprimer</a>
 									</td>
 								</tr>
@@ -49,6 +49,24 @@
    			<div class="card">
 	    	  	<div class="card-body">
 	    	   		<h5 class="card-title">Liste des utilisateurs</h5>
+	    	   		<table>
+						<thead>
+							<tr>
+								<th>Nom</th>
+								<th>Prenom</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<c:forEach items="${ users }" var="user">
+								<tr>
+									<td><a href="">${ user.getNom() }</a></td>
+									<td><a href="">${ user.getPrenom() }</a></td>
+									
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 	   		   	</div>
 	  	 	 </div>
 	 	</div>
@@ -56,6 +74,13 @@
 		    <div class="card">
 			    <div class="card-body">
 			        <h5 class="card-title">Liste des messages</h5>
+			        <div class="modal-body">
+				        <p>aperçu des messages</p>
+				      </div>
+			        <div class="input-group">
+					    <textarea class="form-control custom-control" rows="3" style="resize:none"></textarea>     
+					    <span class="input-group-addon btn btn-primary">Envoyer</span>
+					</div>
 				</div>
 			</div>
 		</div>

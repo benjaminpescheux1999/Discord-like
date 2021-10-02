@@ -16,7 +16,7 @@
 	<form method="POST">
 		<div>
 			<label>Nom</label>
-			<input type="text" name="nom" <%-- value="${ server.nom } --%>" />
+			<input type="text" name="nom" value="${ nom }" />
 		</div>
 		
 		

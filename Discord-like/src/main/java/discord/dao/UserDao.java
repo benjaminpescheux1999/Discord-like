@@ -17,13 +17,13 @@ public class UserDao implements IUserDao{
 	
 	public List<UserModel> findAll() {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select u from users",UserModel.class)
+		return this.em.createQuery("select u from UserModel u",UserModel.class)
 				.getResultList();
 	}
 
 	public UserModel findById(Integer id) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select u from users u where u.USER_ID = :?1",UserModel.class)
+		return this.em.createQuery("select u from UserModel u where u.id = ?1",UserModel.class)
 				.setParameter(1, id)
 				.getSingleResult();
 	}
@@ -48,7 +48,7 @@ public class UserDao implements IUserDao{
 
 	public UserModel login(String nom, String password) {
 		// TODO Auto-generated method stub
-		return this.em.createQuery("select u from UserModel u where u.USER_ID = ?1 AND u.USER_PASSWORD= ?2",UserModel.class)
+		return this.em.createQuery("select u from UserModel u where u.id = ?1 AND u.password= ?2",UserModel.class)
 				.setParameter(1, nom)
 				.setParameter(2, password)
 				.getSingleResult();

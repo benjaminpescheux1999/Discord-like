@@ -29,9 +29,6 @@ public class ServerModel {
 	private List<MsgModel> messages;
 
 // Constructeur
-	public ServerModel() {
-        
-    }
 
 	public ServerModel( String nom) {
 	       
@@ -46,7 +43,19 @@ public class ServerModel {
         this.users = users;
         this.messages = messages;
     }
-// Nom
+
+//test
+	public ServerModel(int id, String nom) {
+		this.id=id;
+		this.nom=nom;
+	}
+	public ServerModel() {
+		
+	}
+
+
+
+	// Nom
     public void setNom(String nom) {
         this.nom=nom;
     }

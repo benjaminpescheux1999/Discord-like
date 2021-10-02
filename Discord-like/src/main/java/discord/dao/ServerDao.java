@@ -5,11 +5,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import discord.model.ServerModel;
 
 @Repository
+@Primary
 public class ServerDao implements IServerDao{
 
 	@PersistenceContext
@@ -27,7 +30,6 @@ public class ServerDao implements IServerDao{
 				.setParameter(1, id)
 				.getSingleResult();
 	}
-
 	public ServerModel save(ServerModel entity) {
 		// TODO Auto-generated method stub
 		if(entity.getId() > 0) {

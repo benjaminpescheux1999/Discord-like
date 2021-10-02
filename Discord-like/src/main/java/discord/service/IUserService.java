@@ -1,5 +1,7 @@
 package discord.service;
 
+import java.util.List;
+
 import discord.model.UserModel;
 
 public interface IUserService {
@@ -11,4 +13,6 @@ public interface IUserService {
 	public void saveUser(UserModel user);
 	
 	public UserModel login(String nom, String password);
+
+	public List<UserModel> findAllUser();
 }

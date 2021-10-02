@@ -5,8 +5,6 @@ import java.util.List;
 import discord.model.ServerModel;
 
 public interface IServerService {
-
-	public List<ServerModel> getAllServer();
 	
 	public ServerModel findServer(int id);
 	
@@ -14,6 +12,6 @@ public interface IServerService {
 	
 	public void saveServer(ServerModel server);
 
-	public List<ServerModel> findAll();
+	public List<ServerModel> findAllServer();
 	
 }

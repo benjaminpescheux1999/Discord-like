@@ -13,18 +13,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import discord.like.dto.ServerDto;
 import discord.model.ServerModel;
+import discord.model.UserModel;
 import discord.service.IServerService;
+import discord.service.IUserService;
 
 @Controller
 @RequestMapping("/home")
 public class HomeController {
 	@Autowired
 	private IServerService srvServer;
+	@Autowired
+	private IUserService srvUser;
 	
 	@GetMapping
 	public String findAll(Model model) {
-		List<ServerModel> mesServers = this.srvServer.findAll();		
-		model.addAttribute("servers", mesServers);		
+		List<ServerModel> mesServers = this.srvServer.findAllServer();		
+		model.addAttribute("servers", mesServers);
+		List<UserModel> mesUsers = this.srvUser.findAllUser();
+		model.addAttribute("users", mesUsers);	
 		return "home";
 	}
 	
@@ -46,20 +52,20 @@ public class HomeController {
 		
 		return "redirect:/home";
 	}
-//	@GetMapping("/modifierserver")
-//	public String modify(Model model,@RequestParam Integer id) {
-//		Produit produit = srvProduit.findById(id);
-//		model.addAttribute("libelle",produit.getLibelle());
-//		model.addAttribute("prix",produit.getprix());
-//
-//		return "ajouter";
-//	}
-//	@PostMapping("/modifier")
-//	public String modify(@RequestParam Integer id, ProduitDto produitdto) {
-//		Produit monProduit = new Produit(id,produitdto.getLibelle(),produitdto.getPrix());
-//		this.srvProduit.save(monProduit);
-//		
-//		return "redirect:/produit";
-//	}
+	@GetMapping("/modifierserver")
+	public String modify(Model model,@RequestParam Integer id) {
+		ServerModel server = srvServer.findServer(id);
+		model.addAttribute("nom",server.getNom());
+		return "addserver";
+	}
+	@PostMapping("/modifierserver")
+	@Transactional
+	public String modify(@RequestParam int id, ServerDto formServer) {
+		ServerModel monServer = this.srvServer.findServer(id);
+		monServer.setNom(formServer.getNom());
+		this.srvServer.saveServer(monServer);
+//		srvServer.saveServer(new ServerModel(formServer.getNom()));
+		return "redirect:/home";
+	}
 }
 

@@ -22,19 +22,13 @@ public class ServerService implements IServerService{
 		// TODO Auto-generated method stub
 		daoServer.deleteById(id);
 	}
-
 	public void saveServer(ServerModel server) {
 		// TODO Auto-generated method stub
-		daoServer.save(server);
-	}
-
-	public List<ServerModel> getAllServer() {
-		// TODO Auto-generated method stub
-		return daoServer.findAll();
+		this.daoServer.save(server);
 	}
 
 	@Override
-	public List<ServerModel> findAll() {
+	public List<ServerModel> findAllServer() {
 		// TODO Auto-generated method stub
 		return daoServer.findAll();
 	}
