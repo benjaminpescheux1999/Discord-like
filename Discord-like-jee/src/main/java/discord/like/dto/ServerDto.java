@@ -6,7 +6,6 @@ import discord.model.UserModel;
 
 public class ServerDto {
  private String nom;
- private
 
 	public String getNom() {
 		return nom;
